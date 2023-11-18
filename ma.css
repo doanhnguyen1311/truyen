@@ -1,0 +1,48 @@
+/* CSS cho điện thoại có độ rộng từ 380px đến 500px */
+@media only screen and (min-width: 380px) and (max-width: 500px) {
+    body {
+        font-size: 14px;
+        /* Kích thước font chung */
+    }
+
+    .navbar {
+        padding: 5px;
+        /* Giảm padding của navbar */
+    }
+
+    .navbar-brand {
+        font-size: 18px;
+        /* Kích thước font của navbar-brand */
+    }
+
+    .container-content {
+        padding: 10px;
+        /* Giảm padding của container-content */
+    }
+
+    .story-container {
+        margin-top: 10px;
+        /* Giảm margin của story-container */
+        padding: 10px;
+        /* Giảm padding của story-container */
+    }
+
+    .content-container {
+        padding-left: 10px;
+        /* Giảm padding bên trái của content-container */
+        padding-right: 10px;
+        /* Giảm padding bên phải của content-container */
+    }
+
+    .pagination {
+        font-size: 12px;
+        /* Kích thước font của pagination */
+    }
+
+    .pagination li {
+        margin: 2px;
+        /* Giảm margin của các phần tử trong pagination */
+    }
+
+    /* Thêm các điều chỉnh khác tùy thuộc vào nhu cầu của bạn */
+}
