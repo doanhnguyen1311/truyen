@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="">
     <title>Trang Chủ</title>
     <style>
         body {
@@ -21,13 +22,55 @@
             font-size: 24px;
         }
 
-        main {
-            max-width: 800px;
-            margin: 20px auto;
+        .sidebar {
+            height: 100%;
+            width: 210px;
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+            overflow-x: hidden;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 3px 12px;
+            text-decoration: none;
+            font-size: 12px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 8px 16px;
+            border-bottom: 1px solid #818181;
+        }
+
+        .sidebar .sub-list {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .sidebar li:hover .sub-list {
+            display: block;
+        }
+
+        .main-content {
+            margin-left: 200px;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
         }
 
         .story-card {
@@ -37,6 +80,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
+            position: relative;
         }
 
         .story-card:hover {
@@ -54,16 +98,40 @@
             color: #666;
         }
 
-        /* Thêm thẻ a cho các giới thiệu */
         .story-link {
             text-decoration: none;
             color: #333;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .hover-text {
+            position: absolute;
+            top: 0;
+            right: -200px;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .story-card:hover .hover-text {
+            right: 0;
         }
 
         footer {
             text-align: center;
             padding: 10px;
             background-color: #333;
+            color: #fff;
+        }
+        #sb{
+            font-weight: 800;
             color: #fff;
         }
     </style>
@@ -75,36 +143,108 @@
         Trang Chủ - Truyện Đọc
     </header>
 
-    <main>
+    <div class="sidebar">
+        <a href="#" style="color: #f1f1f1; font-weight: 900; font-size: 14px;">Thể loại</a>
+        <ul>
+            <li>
+                <a href="#" id="sb">Kinh Dị</a>
+                <ul class="sub-list">
+                    <li><a href="kaat1.html" target="_blank">Kỳ Án Ánh Trăng</a></li>
+                    <li><a href="dtdm1.html" target="_blank">Đề Thi Đẫm Máu</a></li>
+                    <li><a href="#">Truyện 3</a></li>
+                    <li><a href="#">Truyện 4</a></li>
+                    <li><a href="#">Truyện 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="sb">Ngôn Tình</a>
+                <ul class="sub-list">
+                    <li><a href="#">Truyện 1</a></li>
+                    <li><a href="#">Truyện 2</a></li>
+                    <li><a href="#">Truyện 3</a></li>
+                    <li><a href="#">Truyện 4</a></li>
+                    <li><a href="#">Truyện 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="sb">Đam Mỹ</a>
+                <ul class="sub-list">
+                    <li><a href="#">Truyện 1</a></li>
+                    <li><a href="#">Truyện 2</a></li>
+                    <li><a href="#">Truyện 3</a></li>
+                    <li><a href="#">Truyện 4</a></li>
+                    <li><a href="#">Truyện 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="sb">Trinh Thám</a>
+                <ul class="sub-list">
+                    <li><a href="#">Truyện 1</a></li>
+                    <li><a href="#">Truyện 2</a></li>
+                    <li><a href="#">Truyện 3</a></li>
+                    <li><a href="#">Truyện 4</a></li>
+                    <li><a href="#">Truyện 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="sb">Bách Hợp</a>
+                <ul class="sub-list">
+                    <li><a href="#">Truyện 1</a></li>
+                    <li><a href="#">Truyện 2</a></li>
+                    <li><a href="#">Truyện 3</a></li>
+                    <li><a href="#">Truyện 4</a></li>
+                    <li><a href="#">Truyện 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="sb">Tiên Hiệp</a>
+                <ul class="sub-list">
+                    <li><a href="#">Truyện 1</a></li>
+                    <li><a href="#">Truyện 2</a></li>
+                    <li><a href="#">Truyện 3</a></li>
+                    <li><a href="#">Truyện 4</a></li>
+                    <li><a href="#">Truyện 5</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
         <!-- Danh sách các truyện -->
-        <a href="kaat1.html" target="_blank" class="story-link">
-            <div class="story-card">
+
+        <div class="story-card">
+            <a href="kaat1.html" target="_blank" class="story-link">
                 <div class="story-title">Kỳ Án Ánh Trăng</div>
-                <div class="story-description">Kỳ án ánh trăng là truyện kinh dị đầu tiên được hai vợ chồng người Trung Quốc Dư Dương – Dị Minh đăng tải trên mạng dưới
-                bút danh chung là Quỷ Cổ Nữ vào giữa năm 2004. Ngay lập tức quyển tiểu thuyết kinh dị này đã gây ra chấn động mạnh mẽ,
-                lôi cuốn hàng triệu độc giả chỉ trong vài tháng.</div>
-            </div>
-        </a>
+                <div class="story-description">Kỳ án ánh trăng là truyện kinh dị đầu tiên được hai vợ chồng người Trung
+                    Quốc Dư Dương – Dị Minh đăng tải trên
+                    mạng dưới bút danh chung là Quỷ Cổ Nữ vào giữa năm 2004. Ngay lập tức quyển tiểu thuyết kinh dị này
+                    đã gây ra chấn động
+                    mạnh mẽ, lôi cuốn hàng triệu độc giả chỉ trong vài tháng.</div>
+            </a>
+        </div>
 
-        <a href="tvd1.html" target="_blank" class="story-link">
-            <div class="story-card">
+        <div class="story-card">
+            <a href="tvd1.html" target="_blank" class="story-link">
                 <div class="story-title">Tấm Vải Đỏ</div>
-                <div class="story-description">Tấm vải đỏ là tiểu thuyết ma kinh dị của tác giả người Trung Quốc Hồng Nương Tử. Sự huyền bí biến ảo trong câu chữ,
-                những tình tiết ly kỳ, sự tàn nhẫn của các nhân vật, tất cả những điều đó đều không thể đủ để diễn tả cảm giác của người
-                đoc sau khi đọc tiểu thuyết của cô.</div>
-            </div>
-        </a>
+                <div class="story-description">Tấm vải đỏ là tiểu thuyết ma kinh dị của tác giả người Trung Quốc Hồng
+                    Nương Tử. Sự huyền bí biến ảo trong câu
+                    chữ, những tình tiết ly kỳ, sự tàn nhẫn của các nhân vật, tất cả những điều đó đều không thể đủ để
+                    diễn tả cảm giác của
+                    người đoc sau khi đọc tiểu thuyết của cô.</div>
+            </a>
+        </div>
 
-        <a href="dtdm1.html" target="_blank" class="story-link">
-            <div class="story-card">
+        <div class="story-card">
+            <a href="dtdm1.html" target="_blank" class="story-link">
                 <div class="story-title">Đề Thi Đẫm Máu</div>
-                <div class="story-description">Một cuốn sách “đáng sợ” đúng nghĩa. Dành cho những ai mê thể loại truyện trinh thám – kinh dị.</div>
-            </div>
-        </a>
+                <div class="story-description">Một cuốn sách “đáng sợ” đúng nghĩa. Dành cho những ai mê thể loại truyện
+                    trinh thám – kinh dị.</div>
+            </a>
+        </div>
 
         <!-- Thêm các story-card khác nếu cần -->
 
-    </main>
+    </div>
 
     <footer>
         © 2023 Trang Đọc Truyện - Mọi quyền được bảo lưu
